@@ -22,6 +22,7 @@ var ball = {
 }
 var rightWristX=0;
 var rightWristY=0;
+var GameStatus="";
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.parent("canvas");
@@ -45,8 +46,14 @@ if(results.length>0){
 
 }
 }
+function startGame(){
+  GameStatus="start";
+  document.getElementById("status").innerHTML="Game is Loading";
+
+}
 function draw(){
-  
+  if(GameStatus=="start"){
+
  background(0); 
   image(video,0,0,700,600);
 fill("red");
@@ -89,7 +96,7 @@ circle(rightWristX,rightWristY,20);
    //function move call which in very important
     move();
 }
-
+}
 
 
 //function reset when ball does notcame in the contact of padde
